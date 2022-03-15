@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  main.container
+    h1 Welcome to Cmail
+    p Hello anon!
+    form(method="POST" action='')
+      button(type="submit", value="Submit", class="btn btn-primary")
+        span See domains available  
+  if !domains
+    main.container
+      .grid
+        div 
+        div 
+        div No domains available
+        div 
+        div 
+  else
+    main.container
+      .gri
+        div 
+        div
+        p Available domains
+        each val in domains
+          a(href='./usedomain/' + val.id) #{val.trueDomain}
+        div
+
+
+
